@@ -29,7 +29,7 @@
 </head>
 <body>
 
-<img src="https://ajlovechina.github.io/loveBalloon/static/music.png" style="position: fixed;z-index: 10001;top:10px;right:10px;width: 30px;height: 30px;" onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}">
+<img class="rotateImages" src="https://ajlovechina.github.io/loveBalloon/static/music.png" style="position: fixed;z-index: 10001;top:10px;right:10px;width: 30px;height: 30px;" onclick="let myAudio = document.querySelector('.song-audio-autoplay'); if (!myAudio.paused ) {myAudio.pause(); this.className = ''} else {myAudio.play(); this.className = 'rotateImages'}">
 <audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
     <source src="./index_files/noi-nay-co-anh.mp3" type="audio/mp3"/>
 </audio>
@@ -75,6 +75,15 @@
         return a + b;
     }))
     $("#clock-box-inside-text").html(`${config.names[0]}`)
+</script>
+
+<script>
+    var audio = document.querySelector('.song-audio-autoplay');
+    var delayTime = 1000;
+
+    setTimeout(function() {
+        audio.play();
+    }, delayTime);
 </script>
 
 <script>
@@ -206,6 +215,8 @@
         }));
 
         var textAnimate = eval(Jscex.compile("async", function () {
+            var imageElement = document.querySelector("#image");
+            imageElement.classList.add("imageEffect");
             var together = new Date(config.date);
 
             $("#code").show().typewriter();
