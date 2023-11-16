@@ -52,3 +52,15 @@ a {color:#000;font-size:14px;}
         width: 5%;
     }
 }
+@media screen and (max-width: 767px) {
+    body{margin:0;padding:0;background:rgb(255, 207, 210);font-size:16px;font-family:'Roboto',sans-serif;color:#231F20;overflow:auto;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main{
+        display: block;
+        width:100%;
+    }
+}
