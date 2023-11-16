@@ -15,21 +15,22 @@ a {color:#000;font-size:14px;}
 #image{
     opacity: 0;
     transition: opacity 2s ease-in-out;
-    width: 80%;
+    width: 70%;
     border-radius: 25px;
     margin-bottom: 20px;
     box-shadow: 0 0 15px #000;
+    border: 6px pink dotted;
 }
 .imageEffect{
     opacity: 1 !important;
 }
-#clock-box {position:absolute;left:60px;top:540px;font-size:35px;display:none;}
+#clock-box {position:absolute;left:60px;top:520px;font-size:30px;display:none;}
 #clock-box a {font-size:28px;text-decoration:none;}
-#clock{margin-left:50px;}
-#clock .digit {font-size:57px;}
+#clock{margin-left:60px; margin-top: 10px;}
+#clock .digit {font-size:60px;}
 #clock-box-inside-text{
-    font-weight: 700;
-    font-size: 60px;
+    font-weight: 500;
+    font-size: 55px;
     font-family: 'Dancing Script', cursive;
 }
 #canvas{margin:0 auto;width:1100px;height:680px;}
@@ -37,3 +38,17 @@ a {color:#000;font-size:14px;}
 .hand{cursor:pointer;}
 .say{margin-left:5px;}
 .space{margin-right:150px;}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    body{
+        width: 200vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main{
+        margin-top: 150vh;
+        margin-left: -100vw;
+        display: block;
+        width: 5%;
+    }
+}
