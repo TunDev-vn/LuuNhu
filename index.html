@@ -68,6 +68,15 @@
 
 </div>
 
+<!-- <script>
+    var audio = document.querySelector('.song-audio-autoplay');
+    var delayTime = 1000;
+
+    setTimeout(function() {
+        audio.play();
+    }, delayTime);
+</script> -->
+
 <script type="text/javascript">
     $('#code').html(config.lines.map(item => {
         return `<span class="say">${item}</span><br>
@@ -76,15 +85,6 @@
         return a + b;
     }))
     $("#clock-box-inside-text").html(`${config.names[0]}`)
-</script>
-
-<script>
-    var audio = document.querySelector('.song-audio-autoplay');
-    var delayTime = 1000;
-
-    setTimeout(function() {
-        audio.play();
-    }, delayTime);
 </script>
 
 <script>
@@ -144,6 +144,10 @@
         var hold = 1;
 
         canvas.click(function (e) {
+            var audio = document.querySelector('.song-audio-autoplay');
+
+                audio.play();
+
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
@@ -218,6 +222,7 @@
         var textAnimate = eval(Jscex.compile("async", function () {
             var imageElement = document.querySelector("#image");
             imageElement.classList.add("imageEffect");
+
             var together = new Date(config.date);
 
             $("#code").show().typewriter();
@@ -242,7 +247,6 @@
         runAsync().start();
     })();
 </script>
-
 
 </body>
 </html>
